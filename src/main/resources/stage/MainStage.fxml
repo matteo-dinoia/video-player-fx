@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="player.Controller">
+    <top><MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#enqueueVideo" text="Enqueue" />
+            <MenuItem onAction="#openVideo" text="Open" />
+            <MenuItem onAction="#exit" text="Exit" />
+        </Menu>
+        <Menu text="View">
+            <MenuItem onAction="#fullscreen" text="Fullscreen"/>
+            <MenuItem fx:id="loopMenuItem" onAction="#invertLooping" text="⭯ Loop" />
+        </Menu>
+        <Menu text="Navigation">
+            <MenuItem onAction="#restart" text="Restart" />
+            <MenuItem onAction="#skipForward" text="⏵ Skip Foreward" />
+            <MenuItem onAction="#skipBackward" text="⏴ Skip Backward" />
+        </Menu>
+    </MenuBar></top>
+
+
+    <center><MediaView fx:id="viewer" /></center>
+
+    <bottom><HBox>
+        <Button onAction="#restart">⏮</Button>
+        <Button fx:id="pauseBtn" onAction="#invertPlaying" prefWidth="30">🞔</Button> <!-- ⏯⏸▶️-->
+        <Button onAction="#nextVideo">⏭</Button>
+        <Button onAction="#skipBackward">⏴</Button>
+        <Button onAction="#skipForward">⏵</Button>
+
+        <Slider fx:id="timeSlider" max="1" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin></Slider>
+
+        <TextField fx:id="elapsedIndicator" alignment="CENTER" editable="false" prefWidth="100">
+            __/__
+        </TextField>
+
+        <Slider fx:id="volumeSlider" majorTickUnit="0.5" max="1" showTickMarks="true" snapToTicks="true" value="1" />
+    </HBox></bottom>
+
+</BorderPane>

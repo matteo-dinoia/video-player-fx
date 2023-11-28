@@ -1,0 +1,25 @@
+BorderPane{
+    -fx-background-color: black;
+}
+
+HBox{
+    -fx-background-color: white;
+}
+
+Button{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+#elapsedIndicator {
+    -fx-background-color: white;
+    -fx-border-color: white;
+}
+
+#timeSlider{
+    -fx-padding: 6px 0 0;
+}
+
+MenuBar{
+    -fx-padding: 0px;
+}
